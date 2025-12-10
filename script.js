@@ -1,9 +1,9 @@
 // Access global window.gameScript
-// import { gameScript } from './data/gameScript.js'; <--- Removed
 
 class GameEngine {
     constructor() {
         this.currentSceneId = "01";
+        this.currentBgm = "";
         this.elements = {
             gameContainer: document.getElementById('game-container'),
             background: document.getElementById('background-layer'),
@@ -13,7 +13,8 @@ class GameEngine {
             dialogueText: document.getElementById('dialogue-text'),
             choicesContainer: document.getElementById('choices-container'),
             mainMenu: document.getElementById('main-menu'),
-            startBtn: document.getElementById('start-btn')
+            startBtn: document.getElementById('start-btn'),
+            bgmPlayer: document.getElementById('bgm-player')
         };
 
         this.init();
@@ -27,6 +28,20 @@ class GameEngine {
         }
     }
 
+    playMusic(src) {
+        if (!src) return;
+        if (this.currentBgm === src) return; // Same song, don't restart
+
+        if (this.elements.bgmPlayer) {
+            this.elements.bgmPlayer.src = src;
+            this.elements.bgmPlayer.volume = 0.5;
+            this.elements.bgmPlayer.play().catch(e => {
+                console.warn("Autoplay prevented:", e);
+            });
+            this.currentBgm = src;
+        }
+    }
+
     startGame() {
         if (this.elements.mainMenu) {
             this.elements.mainMenu.style.display = 'none';
@@ -35,7 +50,6 @@ class GameEngine {
     }
 
     loadScene(sceneId) {
-        // Access global variable window.gameScript
         const script = window.gameScript;
         if (!script) {
             console.error("Game script not loaded!");
@@ -48,21 +62,21 @@ class GameEngine {
             return;
         }
 
-        // 1. Update Image (Single Photo Mode with Blurred Background)
+        // 1. Update Image
         if (sceneData.image) {
-            // Blurred background fill
             this.elements.background.style.backgroundImage = `url('${sceneData.image}')`;
-
-            // Centered clear image
             this.elements.character.style.backgroundImage = `url('${sceneData.image}')`;
             this.elements.character.style.opacity = 1;
-        } else {
-            // Fallback
+
+            // 2. Play BGM
+            if (sceneData.bgm) {
+                this.playMusic(sceneData.bgm);
+            }
         }
 
         // 3. Show Text
         this.showDialogue(sceneData.speaker, sceneData.text, () => {
-            // 4. Show Choices after text is done
+            // 4. Show Choices
             this.showChoices(sceneData.choices);
         });
     }
@@ -72,9 +86,8 @@ class GameEngine {
         this.elements.speakerName.textContent = speaker;
         this.elements.dialogueText.textContent = "";
 
-        // Typewriter effect
         let i = 0;
-        const speed = 50; // ms per char
+        const speed = 50;
 
         const typeWriter = () => {
             if (i < text.length) {
@@ -90,7 +103,7 @@ class GameEngine {
     }
 
     showChoices(choices) {
-        this.elements.choicesContainer.innerHTML = ''; // Clear old choices
+        this.elements.choicesContainer.innerHTML = '';
         if (!choices || choices.length === 0) return;
 
         this.elements.choicesContainer.style.display = 'flex';
@@ -108,7 +121,6 @@ class GameEngine {
     }
 }
 
-// Initialize Game
 window.onload = () => {
     const game = new GameEngine();
 };

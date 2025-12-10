@@ -2,6 +2,7 @@ window.gameScript = [
     {
         id: "01",
         image: "assets/01.png",
+        bgm: "assets/music.mp3",
         speaker: "你",
         text: "（清晨的海風帶著微鹹的味道。轉過街角，她一如往常地在那裡等著。）",
         choices: [
