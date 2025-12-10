@@ -124,5 +124,7 @@ __expression__
 3.  **編寫劇情**: 編輯 `data/gameScript.js`，將對話與圖片對應起來。
 4.  **開始遊戲**: 打開 `index.html`，您專屬的戀愛遊戲就完成了！
 
+DEMO網址: https://craig7351.github.io/lovegame/
+
 這個範例展示了 AI 生成內容 (AIGC) 如何快速轉化為實際的互動娛樂產品。
 
